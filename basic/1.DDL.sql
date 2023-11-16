@@ -70,4 +70,3 @@ DROP TABLE post;
 --명령문 집합을 하나의 스크립트로 작성할 때 쓰면 유용하다 !
 DROP database IF EXISTS board;
 SHOW databases;
-
