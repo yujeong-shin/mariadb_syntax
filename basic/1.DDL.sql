@@ -23,16 +23,6 @@ SHOW FULL COLUMNS FROM author;
 
 --테이블 생성문 조회
 SHOW CREATE TABLE posts;
--- ALTER 등으로 중간에 변경된 사항을 반영해서 명령문을 알려줌.
--- 'CREATE TABLE `posts` (
---   `id` int(11) NOT NULL,
---   `title` varchar(255) DEFAULT NULL,
---   `contetn` varchar(255) DEFAULT NULL,
---   `author_id` int(11) DEFAULT NULL,
---   PRIMARY KEY (`id`),
---   KEY `author_id` (`author_id`),
---   CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`author_id`) REFERENCES `author` (`id`)
--- ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci'
 
 --테이블 제약조건 조회
 SELECT * FROM INFORMATINO_SCHEMA.KEY_COLUMN_USAGE
@@ -41,7 +31,7 @@ WHERE TABLE_NAME = 'posts';
 --인덱스 조회
 SHOW INDEX FROM posts;
 
---테이블 이름 변경
+--테이블 이름 변경(RENAME)
 ALTER TABLE 테이블명 RENAME 새로운 테이블명;
 ALTER TABLE posts RENAME post;
 
@@ -53,11 +43,11 @@ ALTER TABLE author ADD COLUMN role VARCHAR(50);
 ALTER TABLE 테이블명 MODIFY COLUMN 컬럼명 타입 [제약조건];
 ALTER TABLE author MODIFY COLUMN name VARCHAR(100) NOT NULL;
 
---컬럼 이름변경
+--컬럼 이름변경(CHANGE)
 ALTER TABLE 테이블명 CHANGE COLUMN 기존컬럼명 새로운컬럼명 타입 [제약조건];
 ALTER TABLE post CHANGE COLUMN content contents VARCHAR(255);
 
---컬럼 삭제
+--컬럼 삭제(DROP)
 ALTER TABLE 테이블명 DROP COLUMN 컬럼명;
 ALTER TABLE author DROP test1;
 
@@ -70,3 +60,4 @@ DROP TABLE post;
 --명령문 집합을 하나의 스크립트로 작성할 때 쓰면 유용하다 !
 DROP database IF EXISTS board;
 SHOW databases;
+

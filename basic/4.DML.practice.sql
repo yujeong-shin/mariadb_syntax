@@ -43,3 +43,5 @@ DELETE FROM author WHERE id=2;
 방법2.
 UPDATE post SET author_id = null WHERE author_id=2;
 DELETE FROM author WHERE id=2;
+
+
